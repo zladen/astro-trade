@@ -1,10 +1,14 @@
 // src/features/chart/ui/CandlestickChart.tsx
 import React, { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
-import { EChartOption } from "echarts";
+
+import { EChartsOption } from "echarts";
 
 const CandlestickChart: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [data, setData] = useState<any[]>([]);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState<string | null>(null);
 
     const token = process.env.NEXT_PUBLIC_INVEST_SECRET_SANDBOX;
@@ -31,6 +35,7 @@ const CandlestickChart: React.FC = () => {
 
                 const result = await response.json();
                 setData(result); // Обновлено на `accounts`, если метод возвращает список аккаунтов
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } catch (err: any) {
                 setError(err.message);
             }
@@ -56,7 +61,7 @@ const CandlestickChart: React.FC = () => {
             ["2025-01-06", 610, 650, 600, 640],
         ];
 
-        const option: EChartOption = {
+        const option: EChartsOption = {
             title: {
                 text: "График японских свечей (OHLC)",
             },

@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 //import { SessionProvider } from "next-auth/react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
