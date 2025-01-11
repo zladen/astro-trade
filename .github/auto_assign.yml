@@ -1,0 +1,22 @@
+# Включить автоматическое добавление ревьюверов к Pull Request'ам
+addReviewers: true
+
+# Включить автоматическое добавление ассайни к Pull Request'ам
+addAssignees: true
+
+# Список ревьюверов (GitHub usernames)
+reviewers:
+    - zladen
+    - reviewerB
+    - reviewerC
+
+# Список пользователей, которых следует добавлять как assignees
+assignees:
+    - zladen
+
+# Ключевые слова для пропуска процесса добавления ревьюверов и ассайни
+skipKeywords:
+    - wip
+
+# Количество ревьюверов, добавляемых к Pull Request'у (0 = добавить всех ревьюверов)
+numberOfReviewers: 0
