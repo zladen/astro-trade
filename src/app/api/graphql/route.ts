@@ -59,8 +59,6 @@ const server = new ApolloServer({
 });
 
 const handler = startServerAndCreateNextHandler(server, {
-    // Похоже, что в @as-integrations/next типы не совсем корректные
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     context: async (nextApiRequest) => {
         // Этот вызов будет выполняться перед любым запросом
         //await mongooseConnect();
