@@ -13,8 +13,10 @@
     "dependencies": {
         "@apollo/client": "^3.12.5",
         "@apollo/server": "^4.11.3",
+        "@as-integrations/next": "^3.2.0",
         "echarts": "^5.6.0",
         "graphql": "^16.10.0",
+        "graphql-tag": "^2.12.6",
         "next": "15.1.4",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -22,7 +24,8 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
-        "@types/node": "^20.17.12",
+        "@types/echarts": "^4.9.22",
+        "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "eslint": "^9",
