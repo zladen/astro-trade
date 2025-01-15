@@ -3,7 +3,7 @@ import buildUrl from "@/app/shared/api/buildUrl";
 
 export const futuresResolver = {
     Query: {
-        //Получить список ETF
+        //Получить список фьючерсов
         futures: async () => {
             const url = buildUrl("InstrumentsService", "Futures");
             if (!url) {

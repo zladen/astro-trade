@@ -3,7 +3,7 @@ import buildUrl from "@/app/shared/api/buildUrl";
 
 export const etfsResolver = {
     Query: {
-        //Получить список облигаций
+        //Получить список ETF
         etfs: async () => {
             const url = buildUrl("InstrumentsService", "Etfs");
             if (!url) {
