@@ -6,45 +6,45 @@ import { EChartsOption } from "echarts";
 
 const CandlestickChart: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const [data, setData] = useState<any[]>([]);
+    //const [data, setData] = useState<any[]>([]);
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState<string | null>(null);
 
-    const token = process.env.NEXT_PUBLIC_INVEST_SECRET_SANDBOX;
-    const fetchCurrency = `https://sandbox-invest-public-api.tinkoff.ru/rest/tinkoff.public.invest.api.contract.v1.InstrumentsService/Currencies`;
+    // const token = process.env.NEXT_PUBLIC_INVEST_SECRET_SANDBOX;
+    // const fetchCurrency = `https://sandbox-invest-public-api.tinkoff.ru/rest/tinkoff.public.invest.api.contract.v1.InstrumentsService/Currencies`;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(fetchCurrency, {
-                    method: "POST", // Изменено на POST
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        "Content-Type": "application/json", // Важно для POST-запросов
-                    },
-                    body: JSON.stringify({
-                        instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED",
-                        instrumentExchange: "INSTRUMENT_EXCHANGE_UNSPECIFIED",
-                    }), // Обычно тело пустое для GetAccounts
-                });
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch(fetchCurrency, {
+    //                 method: "POST", // Изменено на POST
+    //                 headers: {
+    //                     Authorization: `Bearer ${token}`,
+    //                     "Content-Type": "application/json", // Важно для POST-запросов
+    //                 },
+    //                 body: JSON.stringify({
+    //                     instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED",
+    //                     instrumentExchange: "INSTRUMENT_EXCHANGE_UNSPECIFIED",
+    //                 }), // Обычно тело пустое для GetAccounts
+    //             });
 
-                if (!response.ok) {
-                    throw new Error(`Ошибка: ${response.status}`);
-                }
+    //             if (!response.ok) {
+    //                 throw new Error(`Ошибка: ${response.status}`);
+    //             }
 
-                const result = await response.json();
-                setData(result); // Обновлено на `accounts`, если метод возвращает список аккаунтов
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            } catch (err: any) {
-                setError(err.message);
-            }
-        };
+    //             const result = await response.json();
+    //             setData(result); // Обновлено на `accounts`, если метод возвращает список аккаунтов
+    //             // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    //         } catch (err: any) {
+    //             setError(err.message);
+    //         }
+    //     };
 
-        fetchData();
-    }, [fetchCurrency, token]);
+    //     fetchData();
+    // }, [fetchCurrency, token]);
 
-    console.log(data);
+    //console.log(data);
 
     const chartRef = useRef<HTMLDivElement>(null);
 
